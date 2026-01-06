@@ -1,0 +1,34 @@
+{
+  "name": "jaypalsapara/blade-elements",
+  "description": "This is a blade only component library",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.2",
+    "gehrisandro/tailwind-merge-laravel": "^1.3",
+    "illuminate/console": "^12.0",
+    "illuminate/support": "^12.0",
+    "torchlight/torchlight-laravel": "^0.6.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "BladeElements\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Jaypal Sapara",
+      "email": "48550828+jaypalsapara@users.noreply.github.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "extra": {
+    "laravel": {
+      "providers": [
+        "BladeElements\\BladeElementsServiceProvider"
+      ]
+    }
+  }
+}
