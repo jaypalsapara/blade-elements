@@ -11,20 +11,22 @@ class AddCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'app:init-command';
+    protected $signature = 'ui:add {component}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Add a UI component to your application';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        //
+        $component = $this->argument('component');
+        $registry = json_decode(file_get_contents(__DIR__.'/../../registry.json'), true);
+        dd($registry);
     }
 }
