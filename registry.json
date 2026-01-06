@@ -3,5 +3,100 @@
     "files": ["components/button.blade.php"],
     "dependencies": [],
     "registryDependencies": []
+  },
+  "blockquote": {
+    "files": ["components/blockquote.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "checkbox": {
+    "files": ["components/checkbox.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "code": {
+    "files": ["components/code.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "codelight": {
+    "files": ["components/codelight.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "example-area": {
+    "files": ["components/example-area.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h1": {
+    "files": ["components/h1.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h2": {
+    "files": ["components/h2.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h3": {
+    "files": ["components/h3.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h4": {
+    "files": ["components/h4.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h5": {
+    "files": ["components/h5.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "h6": {
+    "files": ["components/h6.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "hr": {
+    "files": ["components/hr.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "input": {
+    "files": ["components/input.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "label": {
+    "files": ["components/label.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "p": {
+    "files": ["components/p.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "radio": {
+    "files": ["components/radio.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "select": {
+    "files": ["components/select.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "small": {
+    "files": ["components/small.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "textarea": {
+    "files": ["components/textarea.blade.php"],
+    "dependencies": [],
+    "registryDependencies": []
   }
 }
