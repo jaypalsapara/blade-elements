@@ -30,6 +30,21 @@ class AddCommand extends Command
 
         $registry = json_decode(file_get_contents(dirname(__DIR__, 3).'/registry.json'), true);
 
+        // Add all components
+        if ($component === 'all' && ! empty($registry)) {
+            $components = array_keys($registry);
+            foreach ($components as $component) {
+                $config = $registry[$component];
+
+                // $this->installDependencies($config);
+
+                $this->installComponent($component, $config);
+            }
+
+            return 1;
+        }
+
+        // Add specific component
         $config = $registry[$component] ?? null;
 
         if (! $config) {
