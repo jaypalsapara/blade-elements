@@ -2,6 +2,7 @@
 
 namespace BladeElements;
 
+use BladeElements\Console\Commands\AddCommand;
 use BladeElements\Console\Commands\InitCommand;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,7 +23,8 @@ class BladeElementsServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                InitCommand::class
+                InitCommand::class,
+                AddCommand::class,
             ]);
         }
     }
