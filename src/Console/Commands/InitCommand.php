@@ -26,6 +26,8 @@ class InitCommand extends Command
     public function handle()
     {
         //
-        $this->info('Initializing UI components...');
+        $this->line("Initializing UI components...");
+
+        // 
     }
 }

@@ -40,22 +40,20 @@ class AddCommand extends Command
 
                 $this->installComponent($component, $config);
             }
+        } else {
+            // Add specific component
+            $config = $registry[$component] ?? null;
 
-            return 1;
+            if (! $config) {
+                $this->line("<fg=red>✗</> Component [{$component}] not found");
+
+                return 1;
+            }
+
+            // $this->installDependencies($config);
+
+            $this->installComponent($component, $config);
         }
-
-        // Add specific component
-        $config = $registry[$component] ?? null;
-
-        if (! $config) {
-            $this->error("Component [{$component}] not found");
-
-            return 1;
-        }
-
-        // $this->installDependencies($config);
-
-        $this->installComponent($component, $config);
     }
 
     /**
@@ -67,7 +65,7 @@ class AddCommand extends Command
 
         foreach ($config['files'] as $file) {
             $source = $this->config('source').'/'.$file;
-            $info = "[{$component}] component has been added!";
+            $info = "<fg=green>✓</> [{$component}] component has been added!";
 
             if (str_contains($file, 'components')) {
                 $destination = $this->config('destination')['ui'].'/'.basename($file);
@@ -85,11 +83,11 @@ class AddCommand extends Command
                 $confirm = $this->ask("Component [{$component}] already exists. Overwrite it? (yes/no) [no]");
                 if (! (strtolower($confirm) === 'y' || strtolower($confirm) === 'yes')) {
 
-                    $this->info("[{$component}] component was skipped.");
+                    $this->line("<fg=cyan>-</> [{$component}] component was skipped.");
 
                     continue;
                 }
-                $info = "[{$component}] component has been overridden!";
+                $info = "<fg=green>✓</> [{$component}] component has been overridden!";
 
             }
 
@@ -99,7 +97,7 @@ class AddCommand extends Command
 
             file_put_contents($destination, $content);
 
-            $this->info($info);
+            $this->line($info);
         }
     }
 
@@ -108,7 +106,6 @@ class AddCommand extends Command
      */
     protected function config(string $key)
     {
-
         return match ($key) {
             'source' => 'https://raw.githubusercontent.com/jaypalsapara/blade-elements/main/resources/views',
             'destination' => [
