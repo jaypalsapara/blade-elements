@@ -1,104 +1,160 @@
 {
   "button": {
-    "files": [
-      "components/button.blade.php",
-      "classes/Button.php"
-    ],
+    "files": ["components/button.blade.php", "classes/Button.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "blockquote": {
-    "files": ["components/blockquote.blade.php"],
+    "files": ["components/blockquote.blade.php", "classes/Blockquote.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "checkbox": {
-    "files": ["components/checkbox.blade.php"],
+    "files": ["components/checkbox.blade.php", "classes/Checkbox.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "code": {
-    "files": ["components/code.blade.php"],
+    "files": ["components/code.blade.php", "classes/Code.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "codelight": {
-    "files": ["components/codelight.blade.php"],
+    "files": ["components/codelight.blade.php", "classes/Codelight.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "example-area": {
-    "files": ["components/example-area.blade.php"],
+    "files": ["components/example-area.blade.php", "classes/ExampleArea.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h1": {
-    "files": ["components/h1.blade.php"],
+    "files": ["components/h1.blade.php", "classes/H1.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h2": {
-    "files": ["components/h2.blade.php"],
+    "files": ["components/h2.blade.php", "classes/H2.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h3": {
-    "files": ["components/h3.blade.php"],
+    "files": ["components/h3.blade.php", "classes/H3.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h4": {
-    "files": ["components/h4.blade.php"],
+    "files": ["components/h4.blade.php", "classes/H4.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h5": {
-    "files": ["components/h5.blade.php"],
+    "files": ["components/h5.blade.php", "classes/H5.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "h6": {
-    "files": ["components/h6.blade.php"],
+    "files": ["components/h6.blade.php", "classes/H6.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "hr": {
-    "files": ["components/hr.blade.php"],
+    "files": ["components/hr.blade.php", "classes/Hr.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "input": {
-    "files": ["components/input.blade.php"],
+    "files": ["components/input.blade.php", "classes/Input.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "label": {
-    "files": ["components/label.blade.php"],
+    "files": ["components/label.blade.php", "classes/Label.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "p": {
-    "files": ["components/p.blade.php"],
+    "files": ["components/p.blade.php", "classes/P.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "radio": {
-    "files": ["components/radio.blade.php"],
+    "files": ["components/radio.blade.php", "classes/Radio.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "select": {
-    "files": ["components/select.blade.php"],
+    "files": ["components/select.blade.php", "classes/Select.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "small": {
-    "files": ["components/small.blade.php"],
+    "files": ["components/small.blade.php", "classes/Small.php"],
     "dependencies": [],
     "registryDependencies": []
   },
   "textarea": {
-    "files": ["components/textarea.blade.php"],
+    "files": ["components/textarea.blade.php", "classes/Textarea.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "sidebar": {
+    "files": [
+      "components/sidebar/_sidebar.blade.php",
+      "components/sidebar/container.blade.php",
+      "components/sidebar/container.blade.php",
+      "components/sidebar/content.blade.php",
+      "components/sidebar/footer.blade.php",
+      "components/sidebar/header.blade.php",
+      "components/sidebar/trigger.blade.php",
+
+      "components/sidebar/group/_group.blade.php",
+      "components/sidebar/group/content.blade.php",
+      "components/sidebar/group/label.blade.php",
+
+      "components/sidebar/menu/_menu.blade.php",
+      "components/sidebar/menu/button.blade.php",
+      "components/sidebar/menu/item.blade.php",
+
+      "components/sidebar/menu/sub/_sub.blade.php",
+      "components/sidebar/menu/sub/button.blade.php",
+      "components/sidebar/menu/sub/item.blade.php",
+
+      "classes/Sidebar/Sidebar.php",
+      "classes/Sidebar/Container.php",
+      "classes/Sidebar/Content.php",
+      "classes/Sidebar/Footer.php",
+      "classes/Sidebar/Header.php",
+      "classes/Sidebar/Trigger.php",
+
+      "classes/Sidebar/Group/Group.php",
+      "classes/Sidebar/Group/Content.php",
+      "classes/Sidebar/Group/Label.php",
+
+      "classes/Sidebar/Menu/Menu.php",
+      "classes/Sidebar/Menu/Item.php",
+      "classes/Sidebar/Menu/Button.php",
+
+      "classes/Sidebar/Sub/Sub.php",
+      "classes/Sidebar/Sub/Item.php",
+      "classes/Sidebar/Sub/Button.php"
+    ],
+    "dependencies": [],
+    "registryDependencies": ["collapsible"]
+  },
+  "collapsible": {
+    "files": [
+      "components/_collapsible.blade.php",
+      "components/content.blade.php",
+      "components/indicator.blade.php",
+      "components/trigger.blade.php",
+
+      "classes/Collapsible/Collapsible.php",
+      "classes/Collapsible/Content.php",
+      "classes/Collapsible/Indicator.php",
+      "classes/Collapsible/Trigger.php"
+    ],
     "dependencies": [],
     "registryDependencies": []
   }

@@ -21,6 +21,15 @@ class AddCommand extends Command
      */
     protected $description = 'Add a UI component to your application';
 
+    protected $registry;
+
+    public function __construct()
+    {
+        $this->registry = json_decode(file_get_contents(dirname(__DIR__, 3).'/registry.json'), true);
+
+        return parent::__construct();
+    }
+
     /**
      * Execute the console command.
      */
@@ -28,7 +37,7 @@ class AddCommand extends Command
     {
         $component = $this->argument('component');
 
-        $registry = json_decode(file_get_contents(dirname(__DIR__, 3).'/registry.json'), true);
+        $registry = $this->registry;
 
         // Add all components
         if ($component === 'all' && ! empty($registry)) {
@@ -36,7 +45,7 @@ class AddCommand extends Command
             foreach ($components as $component) {
                 $config = $registry[$component];
 
-                // $this->installDependencies($config);
+                $this->installDependencies($config);
 
                 $this->installComponent($component, $config);
             }
@@ -50,7 +59,7 @@ class AddCommand extends Command
                 return 1;
             }
 
-            // $this->installDependencies($config);
+            $this->installDependencies($config);
 
             $this->installComponent($component, $config);
         }
@@ -63,14 +72,15 @@ class AddCommand extends Command
     {
         $destination = $this->config('destination');
 
+        $info = "<fg=green>✓</> [{$component}] component has been added!";
+
         foreach ($config['files'] as $file) {
             $source = $this->config('source').'/'.$file;
-            $info = "<fg=green>✓</> [{$component}] component has been added!";
 
             if (str_contains($file, 'components')) {
-                $destination = $this->config('destination')['ui'].'/'.basename($file);
+                $destination = $this->config('destination')['ui'].'/'.ltrim($file, 'components/');
             } elseif (str_contains($file, 'classes')) {
-                $destination = $this->config('destination')['classes'].'/'.basename($file);
+                $destination = $this->config('destination')['classes'].'/'.ltrim($file, 'classes/');
             }
 
             // Create directory if not exists
@@ -97,7 +107,37 @@ class AddCommand extends Command
 
             file_put_contents($destination, $content);
 
-            $this->line($info);
+        }
+        $this->line($info);
+    }
+
+    /**
+     * Install component dependencies
+     */
+    protected function installDependencies(array $config)
+    {
+
+        $registry = $this->registry;
+        $registryDependencies = $config['registryDependencies'] ?? [];
+
+        if (empty($registryDependencies)) {
+            return;
+        }
+
+        $this->line('Installing dependencies...');
+
+        foreach ($registryDependencies as $dependency) {
+            $dependencyConfig = $registry[$dependency] ?? null;
+
+            if (! $config) {
+                $this->line("<fg=red>✗</>Dependency component [{$dependency}] not found");
+
+                continue;
+            }
+
+            $this->installDependencies($dependencyConfig);
+
+            $this->installComponent($dependency, $dependencyConfig);
         }
     }
 
