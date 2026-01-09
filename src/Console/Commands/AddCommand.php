@@ -128,8 +128,9 @@ class AddCommand extends Command
 
         foreach ($registryDependencies as $dependency) {
             $dependencyConfig = $registry[$dependency] ?? null;
+            dd($dependency,$dependencyConfig);
 
-            if (! $config) {
+            if (! $dependencyConfig) {
                 $this->line("<fg=red>✗</>Dependency component [{$dependency}] not found");
 
                 continue;

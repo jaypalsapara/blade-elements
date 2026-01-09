@@ -145,10 +145,10 @@
   },
   "collapsible": {
     "files": [
-      "components/_collapsible.blade.php",
-      "components/content.blade.php",
-      "components/indicator.blade.php",
-      "components/trigger.blade.php",
+      "components/collapsible/_collapsible.blade.php",
+      "components/collapsible/content.blade.php",
+      "components/collapsible/indicator.blade.php",
+      "components/collapsible/trigger.blade.php",
 
       "classes/Collapsible/Collapsible.php",
       "classes/Collapsible/Content.php",
