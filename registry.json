@@ -1,6 +1,9 @@
 {
   "button": {
-    "files": ["components/button.blade.php"],
+    "files": [
+      "components/button.blade.php",
+      "classes/Button.php"
+    ],
     "dependencies": [],
     "registryDependencies": []
   },

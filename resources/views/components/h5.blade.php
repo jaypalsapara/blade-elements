@@ -1,1 +1,1 @@
-<h5 {{ $attributes->twMerge("text-2xl") }}>{{ $slot }}</h5>
+<h5 {{ $attributes }}>{{ $slot }}</h5>

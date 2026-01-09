@@ -1,1 +1,1 @@
-<small {{ $attributes->twMerge("block text-xs") }}>{{ $slot }}</small>
+<small {{ $attributes }}>{{ $slot }}</small>

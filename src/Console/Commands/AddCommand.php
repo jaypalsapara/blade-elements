@@ -69,7 +69,7 @@ class AddCommand extends Command
 
             if (str_contains($file, 'components')) {
                 $destination = $this->config('destination')['ui'].'/'.basename($file);
-            } elseif (str_contains($file, 'classes/')) {
+            } elseif (str_contains($file, 'classes')) {
                 $destination = $this->config('destination')['classes'].'/'.basename($file);
             }
 
@@ -110,7 +110,7 @@ class AddCommand extends Command
             'source' => 'https://raw.githubusercontent.com/jaypalsapara/blade-elements/main/resources/views',
             'destination' => [
                 'ui' => resource_path('views/components/ui'),
-                'classes' => app_path('View/Components'),
+                'classes' => app_path('View/Components/Ui'),
             ] ,
         };
     }

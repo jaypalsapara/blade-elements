@@ -1,1 +1,1 @@
-<hr {{ $attributes->twMerge("my-6") }} />
+<hr {{ $attributes }} />
