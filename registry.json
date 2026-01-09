@@ -103,7 +103,6 @@
     "files": [
       "components/sidebar/_sidebar.blade.php",
       "components/sidebar/container.blade.php",
-      "components/sidebar/container.blade.php",
       "components/sidebar/content.blade.php",
       "components/sidebar/footer.blade.php",
       "components/sidebar/header.blade.php",
@@ -136,9 +135,9 @@
       "classes/Sidebar/Menu/Item.php",
       "classes/Sidebar/Menu/Button.php",
 
-      "classes/Sidebar/Sub/Sub.php",
-      "classes/Sidebar/Sub/Item.php",
-      "classes/Sidebar/Sub/Button.php"
+      "classes/Sidebar/Menu/Sub/Sub.php",
+      "classes/Sidebar/Menu/Sub/Item.php",
+      "classes/Sidebar/Menu/Sub/Button.php"
     ],
     "dependencies": [],
     "registryDependencies": ["collapsible"]

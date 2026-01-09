@@ -4,6 +4,7 @@ namespace BladeElements\Console\Commands;
 
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class AddCommand extends Command
 {
@@ -77,10 +78,10 @@ class AddCommand extends Command
         foreach ($config['files'] as $file) {
             $source = $this->config('source').'/'.$file;
 
-            if (str_contains($file, 'components')) {
-                $destination = $this->config('destination')['ui'].'/'.ltrim($file, 'components/');
-            } elseif (str_contains($file, 'classes')) {
-                $destination = $this->config('destination')['classes'].'/'.ltrim($file, 'classes/');
+            if (str_starts_with($file, 'components/')) {
+                $destination = $this->config('destination')['ui'].'/'. Str::after($file, 'components/');
+            } elseif (str_starts_with($file, 'classes/')) {
+                $destination = $this->config('destination')['classes'].'/'. Str::after($file, 'classes/');
             }
 
             // Create directory if not exists
