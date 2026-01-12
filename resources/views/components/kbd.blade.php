@@ -1,0 +1,1 @@
+<kbd {{ $attributes }}>{{ $slot }}</kbd>

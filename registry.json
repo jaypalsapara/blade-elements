@@ -156,5 +156,20 @@
     ],
     "dependencies": [],
     "registryDependencies": []
+  },
+  "a": {
+    "files": ["components/a.blade.php", "classes/A.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "kbd": {
+    "files": ["components/kbd.blade.php", "classes/Kbd.php"],
+    "dependencies": [],
+    "registryDependencies": []
+  },
+  "vr": {
+    "files": ["components/vr.blade.php", "classes/Vr.php"],
+    "dependencies": [],
+    "registryDependencies": []
   }
 }
